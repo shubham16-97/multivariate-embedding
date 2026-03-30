@@ -27,7 +27,7 @@ class TimeSeriesModel:
         preds = []
 
         for _ in range(steps):
-            z_t = self.predictor.predict_next(z_t, k_neighbors=5)
+            z_t = self.predictor.predict_next(z_t, k_neighbors=10)
             preds.append(z_t)
 
         return np.array(preds)
